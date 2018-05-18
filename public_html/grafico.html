@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gráfico</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Seleccionar índice y período para visualizar el gráfico.</div>
+        <br>
+        <form>
+            Indice: 
+            <select name="indice">
+                <option value="IGPA">IGPA</option>
+                <option value="IPSA">IPSA</option>
+                <option value="INTER-10">INTER-10</option>
+            </select>
+            <br>
+            Periodo: 
+            <select name="periodo">
+                <option value="AN">Anual</option>
+                <option value="ME">Mensual</option>
+            </select>
+            <br>
+            Fecha de inicio:
+            <input type="date" name="fecha_inicio">
+            <br>
+            Fecha de fin:
+            <input type="date" name="fecha_fin">
+            <br>
+            <input type="submit" value="Ver gráfico">
+        </form>
+        <br>
+        <form action="/BCS-Client/index.html">
+            <input type="submit" value="Volver">
+        </form>
+    </body>
+</html>
