@@ -17,9 +17,11 @@ module.controller("buscadorController", function buscadorController($scope, $htt
             $scope.url_1 = url_;
             $http.get(url_).then(function mySuccess(response) {
                 alert("Hubo respuesta del servidor.");
+                $scope.res_code = response.status;
                 $scope.respuesta = response.data;
             }, function myError(response) {
                 alert("No hubo respuesta del servidor.");
+                $scope.res_code = response.status;
                 $scope.respuesta = response.statusText;
             });
         } else {
@@ -29,9 +31,11 @@ module.controller("buscadorController", function buscadorController($scope, $htt
             $scope.url_1 = url_;
             $http.get(url_).then(function mySuccess(response) {
                 alert("Hubo respuesta del servidor.");
+                $scope.res_code = response.status;
                 $scope.respuesta = response.data;
             }, function myError(response) {
                 alert("No hubo respuesta del servidor.");
+                $scope.res_code = response.status;
                 $scope.respuesta = response.statusText;
             });
         }
