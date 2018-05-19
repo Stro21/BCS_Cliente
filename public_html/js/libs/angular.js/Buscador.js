@@ -9,7 +9,7 @@ var module = angular.module("buscadorApp", []);
 module.controller("buscadorController", function buscadorController($scope, $http) {
     $scope.ingresar_datos = function () {
         var url_ = 'http://bcstest.mybluemix.net/bcstest/rest/indices/consultaIndices?';
-        if ($scope.f_hasta <= $scope.f_desde || $scope.periodo === undefined || $scope.f_desde === undefined || $scope.f_hasta === undefined) {
+        if ($scope.periodo === undefined || $scope.f_desde === undefined || $scope.f_hasta === undefined || $scope.f_desde > $scope.f_hasta) {
             alert("La fecha de fin es menor a la inicial o faltan datos.");
         } else if ($scope.indice === undefined) {
             url_ += '&periodo=' + $scope.periodo + '&f_desde=' + $scope.f_desde + '&f_hasta=' + $scope.f_hasta;
@@ -20,10 +20,10 @@ module.controller("buscadorController", function buscadorController($scope, $htt
                 $scope.res_code = response.status;
                 $scope.respuesta = response.data;
             }, function myError(response) {
-                alert("No hubo respuesta del servidor.");
                 $scope.res_code = response.status;
                 $scope.respuesta = response.statusText;
-            });
+                alert("No hubo respuesta del servidor. Status: "+$scope.res_code);
+               });
         } else {
             url_ += 'indice=' + $scope.indice + '&periodo=' + $scope.periodo +
                     '&f_desde=' + $scope.f_desde + '&f_hasta=' + $scope.f_hasta;
