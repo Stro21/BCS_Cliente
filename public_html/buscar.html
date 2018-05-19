@@ -16,7 +16,7 @@ and open the template in the editor.
         <br>
         <form action="imprimir_datos()">
             Indice: 
-            <select name="indice">
+            <select id="indice">
                 <option value="">Todos los índices</option>
                 <option value="BANCA">BANCA</option>
                 <option value="COMMODITIES">COMMODITIES</option>
@@ -35,17 +35,17 @@ and open the template in the editor.
             </select>
             <br>
             Período: 
-            <select name="periodo">
+            <select id="periodo">
                 <option value="DI">Diario</option>
                 <option value="ME">Mensual</option>
                 <option value="AN">Anual</option>
             </select>
             <br>
             Fecha de inicio:
-            <input type="date" name="fecha_inicio">
+            <input type="date" id="fecha_inicio">
             <br>
             Fecha de fin:
-            <input type="date" name="fecha_fin">
+            <input type="date" id="fecha_fin">
             <br>
             <input type="submit" value="Buscar">
         </form>
