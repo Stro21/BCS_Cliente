@@ -10,53 +10,52 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/libs/angular.js/angular.js" type="text/javascript"></script>
+        <script src="js/libs/angular.js/Buscador.js" type="text/javascript"></script>
     </head>
     <body>
-        <div>Ingresar los datos correspondientes.</div>
-        <br>
-        <form action="imprimir_datos()">
-            Indice: 
-            <select id="indice">
-                <option value="">Todos los índices</option>
-                <option value="BANCA">BANCA</option>
-                <option value="COMMODITIES">COMMODITIES</option>
-                <option value="CONST.&amp;INMOB.">CONST.&amp;INMOB.</option>
-                <option value="CONSUMO">CONSUMO</option>
-                <option value="IGPA">IGPA</option>
-                <option value="IGPA LARGE">IGPA LARGE</option>
-                <option value="IGPA MID">IGPA MID</option>
-                <option value="IGPA SMALL">IGPA SMALL</option>
-                <option value="INDUSTRIAL">INDUSTRIAL</option>
-                <option value="INTER-10">INTER-10</option>
-                <option value="IPSA">IPSA</option>
-                <option value="RETAIL">RETAIL</option>
-                <option value="SALMON">SALMON</option>
-                <option value="UTILITIES">UTILITIES</option>
-            </select>
+        <div class="contanier" ng-app="buscadorApp" ng-controller="buscadorController">
+            Ingresar los datos correspondientes.
             <br>
-            Período: 
-            <select id="periodo">
-                <option value="DI">Diario</option>
-                <option value="ME">Mensual</option>
-                <option value="AN">Anual</option>
-            </select>
+            <form role="form">
+                Indice: 
+                <select id="indice" ng-model="indice">
+                    <option value="">Todos los índices</option>
+                    <option value="BANCA">BANCA</option>
+                    <option value="COMMODITIES">COMMODITIES</option>
+                    <option value="CONST.&amp;INMOB.">CONST.&amp;INMOB.</option>
+                    <option value="CONSUMO">CONSUMO</option>
+                    <option value="IGPA">IGPA</option>
+                    <option value="IGPA LARGE">IGPA LARGE</option>
+                    <option value="IGPA MID">IGPA MID</option>
+                    <option value="IGPA SMALL">IGPA SMALL</option>
+                    <option value="INDUSTRIAL">INDUSTRIAL</option>
+                    <option value="INTER-10">INTER-10</option>
+                    <option value="IPSA">IPSA</option>
+                    <option value="RETAIL">RETAIL</option>
+                    <option value="SALMON">SALMON</option>
+                    <option value="UTILITIES">UTILITIES</option>
+                </select>
+                <br>
+                Período: 
+                <select id="periodo" ng-model="periodo">
+                    <option value="DI">Diario</option>
+                    <option value="ME">Mensual</option>
+                    <option value="AN">Anual</option>
+                </select>
+                <br>
+                Fecha de inicio:
+                <input type="date" id="f_desde" ng-model="f_desde">
+                <br>
+                Fecha de fin:
+                <input type="date" id="f_hasta" ng-model="f_hasta">
+                <br>
+                <input type="submit" value="Buscar" ng-click="ingresar_datos()">
+            </form>
             <br>
-            Fecha de inicio:
-            <input type="date" id="fecha_inicio">
-            <br>
-            Fecha de fin:
-            <input type="date" id="fecha_fin">
-            <br>
-            <input type="submit" value="Buscar">
-        </form>
-        <br>
-        <form action="/BCS-Client/index.html">
+            <p>{{url_1}}</p>
+        </div>
+        <form action="/BCS_Cliente/index.html">
             <input type="submit" value="Volver">
         </form>
-<!--        <script>
-            function imprimir_datos(){
-                var indice = document.getElementsByClassName("indice");
-            }
-        </script> -->
     </body>
 </html>

@@ -11,33 +11,34 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/libs/angular.js/angular.js" type="text/javascript"></script>
     </head>
-    <body>
-        <div>Seleccionar índice y período para visualizar el gráfico.</div>
-        <br>
-        <form>
-            Indice: 
-            <select id="indice">
-                <option value="IGPA">IGPA</option>
-                <option value="IPSA">IPSA</option>
-                <option value="INTER-10">INTER-10</option>
-            </select>
+    <body ng-app="">
+        <div>Seleccionar índice y período para visualizar el gráfico.
             <br>
-            Periodo: 
-            <select id="periodo">
-                <option value="AN">Anual</option>
-                <option value="ME">Mensual</option>
-            </select>
+            <form>
+                Indice: 
+                <select id="indice">
+                    <option value="IGPA">IGPA</option>
+                    <option value="IPSA">IPSA</option>
+                    <option value="INTER-10">INTER-10</option>
+                </select>
+                <br>
+                Periodo: 
+                <select id="periodo">
+                    <option value="AN">Anual</option>
+                    <option value="ME">Mensual</option>
+                </select>
+                <br>
+                Fecha de inicio:
+                <input type="date" id="f_desde">
+                <br>
+                Fecha de fin:
+                <input type="date" id="f_hasta">
+                <br>
+                <input type="submit" value="Ver gráfico">
+            </form>
             <br>
-            Fecha de inicio:
-            <input type="date" id="fecha_inicio">
-            <br>
-            Fecha de fin:
-            <input type="date" id="fecha_fin">
-            <br>
-            <input type="submit" value="Ver gráfico">
-        </form>
-        <br>
-        <form action="/BCS-Client/index.html">
+        </div>
+        <form action="/BCS_Cliente/index.html">
             <input type="submit" value="Volver">
         </form>
     </body>
